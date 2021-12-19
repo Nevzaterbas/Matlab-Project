@@ -1,0 +1,50 @@
+%implements s38_b0_232fs_4_TLCInterface "C"
+
+%function getDWorkAddr_24_44_4_2_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(4 ,2, 1)>
+
+%return "&localDW->eimslitsk2"
+%endfunction
+
+%function getDWork_24_44_4_2_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(4 ,2, 1)>
+
+%return "localDW->eimslitsk2"
+%endfunction
+
+%function getInputAddr_24_44_4_4_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(4 ,4, 4)>
+
+%return "&localB->lip1w3qso4_kkiq3xxxve" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_24_44_4_4_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(4 ,4, 4)>
+
+%return "localB->lip1w3qso4_kkiq3xxxve" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_24_44_4_4_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(4 ,4, 5)>
+
+%return "&localDW->eimslitsk2"
+%endfunction
+
+%function getDWork_24_44_4_4_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(4 ,4, 5)>
+
+%return "localDW->eimslitsk2"
+%endfunction
+
+%function getDWorkAddr_24_44_4_5_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(4 ,5, 1)>
+
+%return "&localDW->eimslitsk2"
+%endfunction
+
+%function getDWork_24_44_4_5_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(4 ,5, 1)>
+
+%return "localDW->eimslitsk2"
+%endfunction
+

@@ -1,0 +1,11 @@
+%implements s38_b0_232fs_4_ModuleConstants "C"
+
+%function ModuleConstants(block) Output
+
+
+/* Named constants for Chart: '<S5>/Movement Controller' */
+#define e2jy2u3al4 ((uint8_T)3U)
+#define hdj24sie2s ((uint8_T)0U)
+#define hmw5pmje1l ((uint8_T)2U)
+#define igqdfcklz1 ((uint8_T)1U)
+%endfunction

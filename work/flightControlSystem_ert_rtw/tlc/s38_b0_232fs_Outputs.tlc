@@ -1,0 +1,301 @@
+%implements s38_b0_232fs_Outputs "C"
+
+%function OutputsForTID(block, system, tid) Output
+%if tid == 0
+%assign ::GlobalCurrentTID = 0
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign _modelSS = ""
+
+/* RateTransition: '<Root>/Rate Transition' */
+ntrh2fpvwnc.isdfgavbou_mbvzarwird = cjyyyt0pe2y.a22yl5arfg;
+%assign   Outputs_open_fxgka2mnesn_31_1 = ""
+%openfile Outputs_open_fxgka2mnesn_31_1
+
+/* Outputs for Atomic SubSystem: '<Root>/Control System' */
+%closefile Outputs_open_fxgka2mnesn_31_1
+
+%assign    Outputs_body_fxgka2mnesn_31_1 = ""
+%openfile  Outputs_body_fxgka2mnesn_31_1
+
+/* Inport: '<Root>/AC cmd' incorporates:
+ *  Inport: '<Root>/Sensors'
+ */
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[24], "Output",0)
+%if SLibCG_SystemFcnArgAccessed("fxgka2mnes",24,0)
+%assign _modelSS = RTMGetModelSSFromIR()
+%endif
+
+%<SLibCGIRGenReusableSysCall("fxgka2mnes", ["%<_modelSS>", "&cmd_inport", "&sensor_inport", "ntrh2fpvwnc.isdfgavbou_mbvzarwird", "&ntrh2fpvwnc.fxgka2mnesn", "&cjyyyt0pe2y.fxgka2mnesn", "&dexojrsdjj.fxgka2mnesn", "&dfmncc1lrqw.fxgka2mnesn"], 24, 0, 6, 0, 6, 31)>\
+
+
+%endif
+%closefile Outputs_body_fxgka2mnesn_31_1
+
+%assign    Outputs_close_fxgka2mnesn_31_1 = ""
+%openfile  Outputs_close_fxgka2mnesn_31_1
+
+/* End of Outputs for SubSystem: '<Root>/Control System' */
+%closefile Outputs_close_fxgka2mnesn_31_1
+%<SLibCG_DumpSSCode(Outputs_open_fxgka2mnesn_31_1, Outputs_body_fxgka2mnesn_31_1, Outputs_close_fxgka2mnesn_31_1)>
+
+
+/* SignalConversion generated from: '<Root>/Control System' */
+motors_outport[0] = ntrh2fpvwnc.fxgka2mnesn.fufubzqhxo[0];
+motors_outport[1] = ntrh2fpvwnc.fxgka2mnesn.fufubzqhxo[1];
+motors_outport[2] = ntrh2fpvwnc.fxgka2mnesn.fufubzqhxo[2];
+motors_outport[3] = ntrh2fpvwnc.fxgka2mnesn.fufubzqhxo[3];
+/* SignalConversion generated from: '<Root>/Control System' */
+flag_outport = ntrh2fpvwnc.fxgka2mnesn.nfno0r33i3;
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutput0LocalVars", localVarDecl)>
+%assign ::GlobalCurrentTID = []
+%endif
+%if tid == 1
+%assign ::GlobalCurrentTID = 1
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+real_T d_x;
+int32_T a;
+int32_T absx;
+int32_T b_absx;
+int32_T b_x_tmp;
+int32_T black;
+int32_T la1ajg1j41;
+int32_T m;
+int32_T output;
+uint32_T tmp;
+uint32_T tmp_p;
+int16_T goodAngle;
+uint16_T leftHalf;
+uint16_T rightHalf;
+int8_T b_n;
+int8_T n;
+boolean_T exitg1;
+boolean_T exitg2;
+boolean_T exitg3;
+%closefile localVarDecl
+/* {S!d779}Outputs for Atomic SubSystem: '<Root>/Image Processing System' */
+/* {S!d782}MATLABSystem: '<S2>/PARROT Image Conversion' incorporates:
+ *  Inport: '<Root>/Image Data'
+ */
+MW_Build_RGB(&imRGB[0], &ntrh2fpvwnc.imageBuff_1[0], &ntrh2fpvwnc.imageBuff_2[0], &ntrh2fpvwnc.imageBuff_3[0]);
+/* {S!d784}MATLAB Function: '<S2>/Gatekeeper' */
+for (output = 0; output < 160; output++) {
+    for (la1ajg1j41 = 0; la1ajg1j41 < 120; la1ajg1j41++) {
+        black = 120 * output + la1ajg1j41;
+        if (ntrh2fpvwnc.imageBuff_1[black] >= 220) {
+            ntrh2fpvwnc.imageBuff_1[black] = MAX_uint8_T;
+        } else {
+            ntrh2fpvwnc.imageBuff_1[black] = 0U;
+        }
+    }
+}
+/* {E!d784}End of MATLAB Function: '<S2>/Gatekeeper' */
+
+/* {S!d786}MATLAB Function: '<S2>/Spin' */
+output = 0;
+goodAngle = -60;
+la1ajg1j41 = 0;
+exitg1 = false;
+while ((!exitg1) && (la1ajg1j41 <= (int32_T)dexojrsdjj.Range_Value - 1)) {
+    goodAngle = -60;
+    a = 0;
+    exitg2 = false;
+    while ((!exitg2) && (a < 301)) {
+        black = 0;
+        m = 0;
+        exitg3 = false;
+        while ((!exitg3) && (m < 15)) {
+            b_x_tmp = (int32_T)%<(SLibCGCallSubFcn("rt_remd_snf", ["(real_T)a + -60.0", "360.0"], 5, 5, 0))>;
+            ntrh2fpvwnc.b_x = b_x_tmp;
+            b_absx = (int32_T)fabs((real_T)b_x_tmp);
+            absx = b_absx;
+            if (b_absx > 180) {
+                if (b_x_tmp > 0) {
+                    ntrh2fpvwnc.b_x = (real_T)b_x_tmp - 360.0;
+                } else {
+                    ntrh2fpvwnc.b_x = (real_T)b_x_tmp + 360.0;
+                }
+                absx = (int32_T)fabs(ntrh2fpvwnc.b_x);
+            }
+            if (absx <= 45) {
+                ntrh2fpvwnc.b_x *= 0.017453292519943295;
+                n = 0;
+            } else if (absx <= 135) {
+                if (ntrh2fpvwnc.b_x > 0.0) {
+                    ntrh2fpvwnc.b_x = (ntrh2fpvwnc.b_x - 90.0) * 0.017453292519943295;
+                    n = 1;
+                } else {
+                    ntrh2fpvwnc.b_x = (ntrh2fpvwnc.b_x + 90.0) * 0.017453292519943295;
+                    n = -1;
+                }
+            } else if (ntrh2fpvwnc.b_x > 0.0) {
+                ntrh2fpvwnc.b_x = (ntrh2fpvwnc.b_x - 180.0) * 0.017453292519943295;
+                n = 2;
+            } else {
+                ntrh2fpvwnc.b_x = (ntrh2fpvwnc.b_x + 180.0) * 0.017453292519943295;
+                n = -2;
+            }
+            d_x = b_x_tmp;
+            if (b_absx > 180) {
+                if (b_x_tmp > 0) {
+                    d_x = (real_T)b_x_tmp - 360.0;
+                } else {
+                    d_x = (real_T)b_x_tmp + 360.0;
+                }
+                b_absx = (int32_T)fabs(d_x);
+            }
+            if (b_absx <= 45) {
+                d_x *= 0.017453292519943295;
+                b_n = 0;
+            } else if (b_absx <= 135) {
+                if (d_x > 0.0) {
+                    d_x = (d_x - 90.0) * 0.017453292519943295;
+                    b_n = 1;
+                } else {
+                    d_x = (d_x + 90.0) * 0.017453292519943295;
+                    b_n = -1;
+                }
+            } else if (d_x > 0.0) {
+                d_x = (d_x - 180.0) * 0.017453292519943295;
+                b_n = 2;
+            } else {
+                d_x = (d_x + 180.0) * 0.017453292519943295;
+                b_n = -2;
+            }
+            if (b_n == 0) {
+                d_x = cos(d_x);
+            } else if (b_n == 1) {
+                d_x = -sin(d_x);
+            } else if (b_n == -1) {
+                d_x = sin(d_x);
+            } else {
+                d_x = -cos(d_x);
+            }
+            if (n == 0) {
+                ntrh2fpvwnc.b_x = sin(ntrh2fpvwnc.b_x);
+            } else if (n == 1) {
+                ntrh2fpvwnc.b_x = cos(ntrh2fpvwnc.b_x);
+            } else if (n == -1) {
+                ntrh2fpvwnc.b_x = -cos(ntrh2fpvwnc.b_x);
+            } else {
+                ntrh2fpvwnc.b_x = -sin(ntrh2fpvwnc.b_x);
+            }
+            if (ntrh2fpvwnc.imageBuff_1[((((int32_T)%<(SLibCGCallSubFcn("rt_roundd_snf", ["((real_T)m + 1.0) * d_x"], 5, 5, 1))> + 79) * 120 - la1ajg1j41) - (int32_T)%<(SLibCGCallSubFcn("rt_roundd_snf", ["((real_T)m + 1.0) * ntrh2fpvwnc.b_x"], 5, 5, 2))>) + 58] == 0) {
+                black = 1;
+                exitg3 = true;
+            } else {
+                m++;
+            }
+        }
+        if (black == 0) {
+            if (a - 60 > 90) {
+                output = -1;
+            } else {
+                output = 1;
+            }
+            exitg2 = true;
+        } else {
+            black = goodAngle + 1;
+            if (goodAngle + 1 > 32767) {
+                black = 32767;
+            }
+            goodAngle = (int16_T)black;
+            a++;
+        }
+    }
+    if (output != 0) {
+        exitg1 = true;
+    } else {
+        la1ajg1j41++;
+    }
+}
+printf("%<TLC_STR_CTX(0)>", goodAngle);
+fflush(stdout);
+/* {S!d788}MATLAB Function: '<S2>/Teacher' incorporates:
+ *  Constant: '<S2>/Range'
+ */
+leftHalf = 0U;
+rightHalf = 0U;
+for (la1ajg1j41 = 0; la1ajg1j41 < 10; la1ajg1j41++) {
+    tmp_p = (uint32_T)ntrh2fpvwnc.imageBuff_1[((78 - la1ajg1j41) * 120 + (int32_T)(60.0 - dexojrsdjj.Range_Value)) - 1] + leftHalf;
+    if (tmp_p > 65535U) {
+        tmp_p = 65535U;
+    }
+    leftHalf = (uint16_T)tmp_p;
+    tmp_p = (uint32_T)ntrh2fpvwnc.imageBuff_1[((la1ajg1j41 + 81) * 120 + (int32_T)(60.0 - dexojrsdjj.Range_Value)) - 1] + rightHalf;
+    if (tmp_p > 65535U) {
+        tmp_p = 65535U;
+    }
+    rightHalf = (uint16_T)tmp_p;
+}
+tmp_p = leftHalf + 255U;
+if (leftHalf + 255U > 65535U) {
+    tmp_p = 65535U;
+}
+tmp = rightHalf + 255U;
+if (rightHalf + 255U > 65535U) {
+    tmp = 65535U;
+}
+if ((uint16_T)tmp_p == (uint16_T)tmp) {
+    la1ajg1j41 = 0;
+} else if (((uint16_T)tmp - 255 == (uint16_T)tmp_p) || ((uint16_T)tmp_p - 255 == (uint16_T)tmp)) {
+    la1ajg1j41 = 0;
+} else if ((uint16_T)tmp_p > (uint16_T)tmp) {
+    la1ajg1j41 = -1;
+} else {
+    la1ajg1j41 = ((uint16_T)tmp > (uint16_T)tmp_p);
+}
+/* {E!d788}End of MATLAB Function: '<S2>/Teacher' */
+
+/* {S!d790}MATLAB Function: '<S2>/Clairvoyant' incorporates:
+ *  Constant: '<S2>/Range'
+ */
+a = 0;
+for (black = 0; black < (int32_T)dexojrsdjj.Range_Value; black++) {
+    if (ntrh2fpvwnc.imageBuff_1[((79 - 5 * la1ajg1j41) * 120 - black) + 58] == 0) {
+        a = 1;
+    }
+}
+/* {S!d792}RateTransition: '<Root>/Rate Transition' incorporates:
+ *  MATLAB Function: '<S2>/Clairvoyant'
+ *  MATLAB Function: '<S2>/Spin'
+ *  Product: '<S2>/Multiply'
+ */
+cjyyyt0pe2y.a22yl5arfg = (real32_T)(a * output);
+/* {E!d779}End of Outputs for SubSystem: '<Root>/Image Processing System' */
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutput1LocalVars", localVarDecl)>
+%assign ::GlobalCurrentTID = []
+%endif
+%endfunction
+%function OutputsFcnProtoTypeForTID(block, system, tid) Output
+%if tid == 0
+%assign ::GlobalCurrentTID = 0
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs0(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(5, 4, fcnProtoType)>
+%assign ::GlobalCurrentTID = []
+%endif
+%if tid == 1
+%assign ::GlobalCurrentTID = 1
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs1(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(5, 5, fcnProtoType)>
+%assign ::GlobalCurrentTID = []
+%endif
+%endfunction
